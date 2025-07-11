@@ -158,8 +158,14 @@ fn display_app_memory(system: &System, top_count: usize) {
             bar.green()
         };
         
+        let truncated_app = if app.len() > 30 {
+            format!("{}...", &app[..27])
+        } else {
+            app.to_string()
+        };
+        
         println!("{:<30} {:>10.0} MB {:>8.1}% {}", 
-            app.truncate(30), 
+            truncated_app, 
             memory_mb, 
             memory_percent, 
             colored_bar
