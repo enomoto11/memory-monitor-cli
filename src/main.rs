@@ -1,7 +1,6 @@
 use clap::{Arg, Command};
 use colored::*;
 use std::collections::HashMap;
-use std::process;
 use sysinfo::{System, SystemExt, ProcessExt};
 
 #[derive(Debug)]
